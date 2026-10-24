@@ -17,9 +17,6 @@
             --border: #E3DFD7;
             --border-hover: #C5BFB3;
             --chip-bg: #EFECE6;
-            --teal-box: #A3CDC4;
-            --teal-text: #17423B;
-            --pink-box: #FFE5E5;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -194,26 +191,14 @@
             position: absolute;
             top: 14px;
             left: 14px;
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(4px);
             border: 1px solid var(--border);
             padding: 4px 10px;
             border-radius: 12px;
             font-size: 10px;
             font-weight: 700;
             color: var(--accent-gold);
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-        }
-        .badge-prov {
-            position: absolute;
-            top: 14px;
-            right: 14px;
-            background: var(--text-dark);
-            color: #FFFFFF;
-            padding: 4px 10px;
-            border-radius: 12px;
-            font-size: 10px;
-            font-weight: 700;
             letter-spacing: 0.5px;
             text-transform: uppercase;
         }
@@ -233,29 +218,8 @@
         .card-col {
             font-size: 11px;
             color: var(--text-muted);
-            margin-bottom: 14px;
+            margin-bottom: 16px;
             letter-spacing: 0.5px;
-        }
-        .price-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: var(--chip-bg);
-            border-radius: 8px;
-            padding: 8px 12px;
-            margin-bottom: 12px;
-        }
-        .price-item span {
-            display: block;
-            font-size: 9px;
-            text-transform: uppercase;
-            font-weight: 700;
-            color: var(--text-muted);
-        }
-        .price-item strong {
-            font-size: 15px;
-            color: var(--text-dark);
-            font-weight: 800;
         }
         .dims-table {
             background: var(--bg);
@@ -287,161 +251,71 @@
             border-top: 1px dashed var(--border);
             padding-top: 10px;
         }
-        /* Fullscreen Slide Modal (2 Sheets) */
         .modal {
             position: fixed;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(18, 20, 24, 0.96);
-            backdrop-filter: blur(10px);
+            background: rgba(20, 22, 25, 0.95);
+            backdrop-filter: blur(8px);
             z-index: 100;
             display: none;
             align-items: center;
             justify-content: center;
-            padding: 30px;
+            padding: 40px;
         }
         .modal.active { display: flex; }
         .slide-frame {
             background: var(--bg);
             border-radius: 16px;
             width: 100%;
-            max-width: 1440px;
-            height: 92vh;
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-            box-shadow: 0 24px 64px rgba(0,0,0,0.5);
-            position: relative;
-        }
-        /* Tab Selector */
-        .modal-tabs {
-            background: #FFFFFF;
-            border-bottom: 1px solid var(--border);
-            padding: 12px 32px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        .tab-btn-group {
-            display: flex;
-            gap: 10px;
-        }
-        .tab-btn {
-            background: var(--chip-bg);
-            border: 1px solid var(--border);
-            padding: 8px 18px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 700;
-            color: var(--text-muted);
-            cursor: pointer;
-            transition: all 0.2s;
-            text-transform: uppercase;
-        }
-        .tab-btn.active {
-            background: var(--accent-gold);
-            color: #FFFFFF;
-            border-color: var(--accent-gold);
-        }
-        .tab-btn:hover:not(.active) {
-            background: var(--border);
-            color: var(--text-dark);
-        }
-        .close-btn {
-            background: transparent;
-            border: none;
-            font-size: 28px;
-            color: var(--text-muted);
-            cursor: pointer;
-            line-height: 1;
-        }
-        .close-btn:hover { color: var(--text-dark); }
-        /* Sheet Views */
-        .sheet-container {
-            flex: 1;
-            overflow-y: auto;
-            display: flex;
-        }
-        /* HOJA 1: SPECIFICATIONS VIEW */
-        .sheet-1-view {
+            max-width: 1400px;
+            height: 90vh;
             display: grid;
             grid-template-columns: 1.35fr 1fr;
-            width: 100%;
-            height: 100%;
-        }
-        .sheet-1-left {
-            background: #FFFFFF;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 30px;
-            border-right: 1px solid var(--border);
+            overflow: hidden;
+            box-shadow: 0 24px 64px rgba(0,0,0,0.4);
             position: relative;
         }
-        .main-img-box {
-            flex: 1;
-            width: 100%;
+        .modal-left {
+            background: #FFFFFF;
             display: flex;
             align-items: center;
             justify-content: center;
-            max-height: 540px;
+            padding: 40px;
+            border-right: 1px solid var(--border);
         }
-        .main-img-box img {
+        .modal-left img {
             max-width: 100%;
             max-height: 100%;
             object-fit: contain;
         }
-        .swatches-row {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 14px;
-            margin-top: 16px;
-            padding-top: 14px;
-            border-top: 1px solid var(--border);
-            width: 100%;
-        }
-        .swatch-item {
-            width: 64px;
-            height: 64px;
-            border-radius: 8px;
-            border: 2px solid var(--border);
-            overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.06);
-        }
-        .swatch-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .sheet-1-right {
-            padding: 36px;
+        .modal-right {
+            padding: 40px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             overflow-y: auto;
         }
-        .modal-cat-tag {
-            font-size: 11px;
+        .modal-cat {
+            font-size: 12px;
             font-weight: 700;
             color: var(--accent-gold);
             letter-spacing: 1.5px;
             text-transform: uppercase;
-            margin-bottom: 4px;
+            margin-bottom: 6px;
         }
         .modal-title {
-            font-size: 28px;
+            font-size: 32px;
             font-weight: 800;
             color: var(--text-dark);
-            margin-bottom: 16px;
-            line-height: 1.2;
+            margin-bottom: 20px;
+            line-height: 1.15;
             text-transform: uppercase;
         }
         .modal-specs-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: 1fr 1fr;
             gap: 10px;
-            margin-bottom: 16px;
+            margin-bottom: 18px;
         }
         .modal-spec-card {
             background: #FFFFFF;
@@ -451,34 +325,25 @@
         }
         .modal-spec-card span {
             display: block;
-            font-size: 9px;
+            font-size: 10px;
             text-transform: uppercase;
-            font-weight: 700;
+            font-weight: 600;
             color: var(--text-muted);
             margin-bottom: 2px;
         }
         .modal-spec-card strong {
             font-size: 15px;
             color: var(--text-dark);
-            font-weight: 800;
-        }
-        .highlight-card {
-            background: #FDFBF7;
-            border-color: var(--accent-gold);
-        }
-        .highlight-card strong {
-            color: #9E6F25;
-            font-size: 17px;
         }
         .modal-materials {
             background: #FFFFFF;
             border: 1px solid var(--border);
             border-radius: 8px;
             padding: 14px;
-            margin-bottom: 14px;
+            margin-bottom: 20px;
         }
         .modal-materials h4 {
-            font-size: 10px;
+            font-size: 11px;
             text-transform: uppercase;
             color: var(--text-muted);
             font-weight: 700;
@@ -489,96 +354,20 @@
             color: var(--text-dark);
             line-height: 1.4;
         }
-        .modal-special {
-            background: #F2F7F6;
-            border: 1px solid #C8E3DC;
-            border-radius: 8px;
-            padding: 10px 14px;
-            margin-bottom: 14px;
-            font-size: 12px;
-            color: #17423B;
-            font-weight: 600;
-        }
-        /* HOJA 2: AMBIENTE VIEW */
-        .sheet-2-view {
-            display: none;
-            flex-direction: column;
-            width: 100%;
-            height: 100%;
-            padding: 24px;
-        }
-        .sheet-2-top-box {
-            flex: 1;
-            background: #FFFFFF;
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            margin-bottom: 16px;
-        }
-        .sheet-2-top-box img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-            border-radius: 8px;
-        }
-        .sheet-2-bottom-bar {
-            background: var(--teal-box);
-            border-radius: 12px;
-            padding: 18px 28px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 16px;
-        }
-        .sheet-2-title {
-            font-size: 20px;
-            font-weight: 800;
-            color: var(--teal-text);
-            text-transform: uppercase;
-        }
-        .sheet-2-sub {
-            font-size: 12px;
-            color: rgba(23, 66, 59, 0.8);
-            font-weight: 600;
-        }
-        .btn-drive {
-            background: var(--teal-text);
-            color: #FFFFFF;
-            text-decoration: none;
-            padding: 12px 24px;
-            border-radius: 24px;
-            font-size: 13px;
-            font-weight: 700;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            transition: all 0.2s;
-        }
-        .btn-drive:hover {
-            background: #0E2925;
-            transform: translateY(-2px);
-        }
-        /* Footer Nav */
         .modal-nav {
-            background: #FFFFFF;
-            border-top: 1px solid var(--border);
-            padding: 14px 32px;
             display: flex;
             align-items: center;
             justify-content: space-between;
+            border-top: 1px solid var(--border);
+            padding-top: 16px;
         }
         .btn-nav {
             background: var(--text-dark);
             color: #FFFFFF;
             border: none;
-            padding: 10px 24px;
+            padding: 10px 22px;
             border-radius: 20px;
-            font-weight: 700;
+            font-weight: 600;
             font-size: 13px;
             cursor: pointer;
             transition: all 0.2s;
@@ -586,9 +375,21 @@
         .btn-nav:hover {
             background: var(--accent-gold);
         }
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 24px;
+            background: transparent;
+            border: none;
+            font-size: 28px;
+            color: var(--text-muted);
+            cursor: pointer;
+            line-height: 1;
+        }
+        .close-btn:hover { color: var(--text-dark); }
         .nav-counter {
             font-size: 13px;
-            font-weight: 700;
+            font-weight: 600;
             color: var(--text-muted);
         }
     </style>
@@ -603,7 +404,7 @@
         <div class="search-controls">
             <div class="search-box">
                 <span class="search-icon">🔍</span>
-                <input type="text" id="searchInput" placeholder="Buscar por mueble, madera, piel, tela o proveedor...">
+                <input type="text" id="searchInput" placeholder="Buscar por nombre, madera, piel o tela...">
             </div>
             <button class="btn-presentation" onclick="startPresentation()">
                 ▶ Modo Presentación
@@ -630,111 +431,70 @@
         <div class="products-grid" id="productsGrid"></div>
     </main>
 
-    <!-- Slide / Fullscreen Modal (2 Sheets) -->
+    <!-- Slide / Fullscreen Modal -->
     <div class="modal" id="slideModal">
         <div class="slide-frame">
-            <!-- Tabs Top Header -->
-            <div class="modal-tabs">
-                <div class="tab-btn-group">
-                    <button class="tab-btn active" id="btnTab1" onclick="switchSheet(1)">📄 Hoja 1: Especificaciones & Costos</button>
-                    <button class="tab-btn" id="btnTab2" onclick="switchSheet(2)">🏡 Hoja 2: Ambiente & Ficha Oficial</button>
-                </div>
-                <button class="close-btn" onclick="closeModal()">×</button>
+            <button class="close-btn" onclick="closeModal()">×</button>
+            <div class="modal-left">
+                <img id="modalImg" src="" alt="">
             </div>
-
-            <!-- Sheets Content -->
-            <div class="sheet-container">
-                <!-- HOJA 1: SPECIFICATIONS -->
-                <div class="sheet-1-view" id="sheet1View">
-                    <div class="sheet-1-left">
-                        <div class="main-img-box">
-                            <img id="m1FrontImg" src="" alt="">
-                        </div>
-                        <div class="swatches-row" id="m1SwatchesRow" style="display: none;">
-                            <div class="swatch-item">
-                                <img id="m1SwatchImg" src="" alt="Acabado">
-                            </div>
-                        </div>
+            <div class="modal-right">
+                <div class="modal-cat" id="modalCat"></div>
+                <div class="modal-title" id="modalTitle"></div>
+                
+                <div class="modal-specs-grid">
+                    <div class="modal-spec-card">
+                        <span>Ancho</span>
+                        <strong id="modalWidth">-</strong>
                     </div>
-                    <div class="sheet-1-right">
-                        <div class="modal-cat-tag" id="m1CatTag"></div>
-                        <div class="modal-title" id="m1Title"></div>
-                        
-                        <div class="modal-specs-grid">
-                            <div class="modal-spec-card">
-                                <span>Ancho</span>
-                                <strong id="m1Width">-</strong>
-                            </div>
-                            <div class="modal-spec-card">
-                                <span>Fondo</span>
-                                <strong id="m1Depth">-</strong>
-                            </div>
-                            <div class="modal-spec-card">
-                                <span>Altura Total</span>
-                                <strong id="m1Height">-</strong>
-                            </div>
-                            <div class="modal-spec-card">
-                                <span>Altura al Asiento</span>
-                                <strong id="m1Seat">-</strong>
-                            </div>
-                            <div class="modal-spec-card">
-                                <span>Empaque / Bultos</span>
-                                <strong id="m1Packages">-</strong>
-                            </div>
-                            <div class="modal-spec-card">
-                                <span>Cubitaje</span>
-                                <strong id="m1Volume">-</strong>
-                            </div>
-                            <div class="modal-spec-card highlight-card">
-                                <span>Precio Público</span>
-                                <strong id="m1Price">$ Consultar</strong>
-                            </div>
-                            <div class="modal-spec-card highlight-card">
-                                <span>Costo</span>
-                                <strong id="m1Cost">$ Consultar</strong>
-                            </div>
-                        </div>
-
-                        <div class="modal-materials">
-                            <h4>Materiales & Acabados</h4>
-                            <p id="m1Materials"></p>
-                        </div>
-
-                        <div class="modal-special" id="m1Special" style="display: none;"></div>
+                    <div class="modal-spec-card">
+                        <span>Fondo</span>
+                        <strong id="modalDepth">-</strong>
+                    </div>
+                    <div class="modal-spec-card">
+                        <span>Altura Total</span>
+                        <strong id="modalHeight">-</strong>
+                    </div>
+                    <div class="modal-spec-card">
+                        <span>Altura al Asiento</span>
+                        <strong id="modalSeat">-</strong>
+                    </div>
+                    <div class="modal-spec-card">
+                        <span>Empaque / Bultos</span>
+                        <strong id="modalPackages">-</strong>
+                    </div>
+                    <div class="modal-spec-card">
+                        <span>Cubitaje</span>
+                        <strong id="modalVolume">-</strong>
+                    </div>
+                    <div class="modal-spec-card">
+                        <span>Precio</span>
+                        <strong id="modalPrice">$ Consultar</strong>
+                    </div>
+                    <div class="modal-spec-card">
+                        <span>Costo</span>
+                        <strong id="modalCost">$ Consultar</strong>
                     </div>
                 </div>
 
-                <!-- HOJA 2: AMBIENTE VIEW -->
-                <div class="sheet-2-view" id="sheet2View">
-                    <div class="sheet-2-top-box">
-                        <img id="m2AmbImg" src="" alt="Ambiente">
-                    </div>
-                    <div class="sheet-2-bottom-bar">
-                        <div>
-                            <div class="sheet-2-title" id="m2Title"></div>
-                            <div class="sheet-2-sub">Ficha Técnica Oficial y Especificaciones de Taller</div>
-                        </div>
-                        <a href="https://drive.google.com/drive/folders/1umQvzMJLXFiOwSyWL8d5v0aCWDpx8hQT?usp=drive_link" target="_blank" class="btn-drive">
-                            Abrir Ficha Técnica en Google Drive ↗
-                        </a>
-                    </div>
+                <div class="modal-materials">
+                    <h4>Materiales & Acabados</h4>
+                    <p id="modalMaterials"></p>
                 </div>
-            </div>
 
-            <!-- Bottom Navigation -->
-            <div class="modal-nav">
-                <button class="btn-nav" onclick="prevSlide()">← Anterior</button>
-                <span class="nav-counter" id="modalCounter">1 / 51</span>
-                <button class="btn-nav" onclick="nextSlide()">Siguiente →</button>
+                <div class="modal-nav">
+                    <button class="btn-nav" onclick="prevSlide()">← Anterior</button>
+                    <span class="nav-counter" id="modalCounter">1 / 51</span>
+                    <button class="btn-nav" onclick="nextSlide()">Siguiente →</button>
+                </div>
             </div>
         </div>
     </div>
 
     <script>
-        const products = [{"id": "CVVSALAARIOI", "name": "SALA DONATI", "category": "SALAS & SOFÁS", "collection": "ARM", "provider": "CASA V&V", "width": "280 cm", "depth": "280 cm", "height": "70 cm", "seat": "N/D", "volume": "3.57 m³", "packages": "1 bulto", "materials": "Madera maciza y acabados de alta calidad", "special": "", "price": "$42,724.00", "cost": "$14,541.90", "photo_frontal": "ARM_sala_Donati_frontal.jpg", "photo_ambiente": "ARM_sala_Donati_ambiente.jpg", "photo_swatch": "ARM_sala_Donati_swatch.jpg", "drive_url": "https://drive.google.com/drive/folders/1umQvzMJLXFiOwSyWL8d5v0aCWDpx8hQT?usp=drive_link"}, {"id": "CVVSALAARIOI", "name": "SALA MARENO", "category": "SALAS & SOFÁS", "collection": "ARM", "provider": "CASA V&V", "width": "280 cm", "depth": "280 cm", "height": "70 cm", "seat": "N/D", "volume": "3.57 m³", "packages": "1 bulto", "materials": "Madera maciza y acabados de alta calidad", "special": "", "price": "$42,724.00", "cost": "$14,541.90", "photo_frontal": "ARM_sala_Mareno_frontal.jpg", "photo_ambiente": "ARM_sala_Mareno_ambiente.jpg", "photo_swatch": "ARM_sala_Mareno_swatch.jpg", "drive_url": "https://drive.google.com/drive/folders/1umQvzMJLXFiOwSyWL8d5v0aCWDpx8hQT?usp=drive_link"}, {"id": "CVVSALAARIOI", "name": "SALA MATERA", "category": "SALAS & SOFÁS", "collection": "ARM", "provider": "CASA V&V", "width": "280 cm", "depth": "280 cm", "height": "70 cm", "seat": "N/D", "volume": "3.57 m³", "packages": "1 bulto", "materials": "Madera maciza y acabados de alta calidad", "special": "", "price": "$42,724.00", "cost": "$14,541.90", "photo_frontal": "ARM_sala_Matera_frontal.jpg", "photo_ambiente": "ARM_sala_Matera_ambiente.jpg", "photo_swatch": "ARM_sala_Matera_swatch.jpg", "drive_url": "https://drive.google.com/drive/folders/1umQvzMJLXFiOwSyWL8d5v0aCWDpx8hQT?usp=drive_link"}, {"id": "CVVSALAARIOI", "name": "SALA MONET", "category": "SALAS & SOFÁS", "collection": "ARM", "provider": "CASA V&V", "width": "280 cm", "depth": "280 cm", "height": "70 cm", "seat": "N/D", "volume": "3.57 m³", "packages": "1 bulto", "materials": "Madera maciza y acabados de alta calidad", "special": "", "price": "$42,724.00", "cost": "$14,541.90", "photo_frontal": "ARM_sala_Monet_frontal.jpg", "photo_ambiente": "ARM_sala_Monet_ambiente.jpg", "photo_swatch": "ARM_sala_Monet_swatch.jpg", "drive_url": "https://drive.google.com/drive/folders/1umQvzMJLXFiOwSyWL8d5v0aCWDpx8hQT?usp=drive_link"}, {"id": "MOBBASKSYUT", "name": "CAMA AURA", "category": "RECÁMARAS & BURÓS", "collection": "ATX", "provider": "MOBEL INN", "width": "184 cm", "depth": "195 cm", "height": "115 cm", "seat": "N/D", "volume": "1.688 m³", "packages": "1 bulto", "materials": "Madera maciza y acabados de alta calidad", "special": "", "price": "$18,096.90", "cost": "$6,159.60", "photo_frontal": "ATX_Cama_Aura_frontal.jpg", "photo_ambiente": "ATX_Cama_Aura_ambiente.jpg", "photo_swatch": "", "drive_url": "https://drive.google.com/drive/folders/1umQvzMJLXFiOwSyWL8d5v0aCWDpx8hQT?usp=drive_link"}, {"id": "MOBBASKSYUT", "name": "CAMA SANTA FE", "category": "RECÁMARAS & BURÓS", "collection": "ATX", "provider": "MOBEL INN", "width": "250 cm", "depth": "195 cm", "height": "115 cm", "seat": "N/D", "volume": "1.688 m³", "packages": "1 bulto", "materials": "Madera maciza y acabados de alta calidad", "special": "", "price": "$18,096.90", "cost": "$6,159.60", "photo_frontal": "ATX_Cama_Santa_fe_frontal.jpg", "photo_ambiente": "ATX_Cama_Santa_fe_ambiente.jpg", "photo_swatch": "", "drive_url": "https://drive.google.com/drive/folders/1umQvzMJLXFiOwSyWL8d5v0aCWDpx8hQT?usp=drive_link"}, {"id": "MOBBUFPLAPAR", "name": "BUFETERA BALI", "category": "BUFETEAS & CREDENZAS", "collection": "ATX", "provider": "MOBEL INN", "width": "200 cm", "depth": "51 cm", "height": "79 cm", "seat": "N/D", "volume": "0.964 m³", "packages": "1 bulto", "materials": "Madera maciza y acabados de alta calidad", "special": "", "price": "$48,769.60", "cost": "$16,599.60", "photo_frontal": "ATX_Bufetera_Bali_frontal.jpg", "photo_ambiente": "ATX_Bufetera_Bali_ambiente.jpg", "photo_swatch": "ATX_Bufetera_Bali_swatch.jpg", "drive_url": "https://drive.google.com/drive/folders/1umQvzMJLXFiOwSyWL8d5v0aCWDpx8hQT?usp=drive_link"}, {"id": "MOBBUFPLAPAR", "name": "BUFETERA LUMA", "category": "BUFETEAS & CREDENZAS", "collection": "ATX", "provider": "MOBEL INN", "width": "183 cm", "depth": "38 cm", "height": "77 cm", "seat": "N/D", "volume": "0.647 m³", "packages": "1 bultos", "materials": "Madera maciza y acabados de alta calidad", "special": "", "price": "$48,769.60", "cost": "$16,599.60", "photo_frontal": "ATX_Bufetera_Luma_frontal.jpg", "photo_ambiente": "ATX_Bufetera_Luma_ambiente.jpg", "photo_swatch": "ATX_Bufetera_Luma_swatch.jpg", "drive_url": "https://drive.google.com/drive/folders/1umQvzMJLXFiOwSyWL8d5v0aCWDpx8hQT?usp=drive_link"}, {"id": "MOBBUFPLAPAR", "name": "BUFETERA SANTHOMAS", "category": "BUFETEAS & CREDENZAS", "collection": "ATX", "provider": "MOBEL INN", "width": "240 cm", "depth": "41 cm", "height": "80 cm", "seat": "N/D", "volume": "0.957 m³", "packages": "1 bulto", "materials": "Madera maciza y acabados de alta calidad", "special": "", "price": "$48,769.60", "cost": "$16,599.60", "photo_frontal": "ATX_Bufetera_Santhomas_frontal.jpg", "photo_ambiente": "ATX_Bufetera_Santhomas_ambiente.jpg", "photo_swatch": "ATX_Bufetera_Santhomas_swatch.jpg", "drive_url": "https://drive.google.com/drive/folders/1umQvzMJLXFiOwSyWL8d5v0aCWDpx8hQT?usp=drive_link"}, {"id": "MOBCTVPUERM", "name": "MESA DE CENTRO KUUN", "category": "MESAS DE CENTRO & LATERALES", "collection": "ATX", "provider": "MOBEL INN", "width": "110 cm", "depth": "110 cm", "height": "35 cm", "seat": "N/D", "volume": "0.529 m³", "packages": "1 bulto", "materials": "Madera maciza y acabados de alta calidad", "special": "", "price": "$98,152.70", "cost": "$33,408.00", "photo_frontal": "ATX_Mesa_de_centro_Kuun_frontal.jpg", "photo_ambiente": "ATX_Mesa_de_centro_Kuun_ambiente.jpg", "photo_swatch": "ATX_Mesa_de_centro_Kuun_swatch.jpg", "drive_url": "https://drive.google.com/drive/folders/1umQvzMJLXFiOwSyWL8d5v0aCWDpx8hQT?usp=drive_link"}, {"id": "MOBJGOMESPARM", "name": "MESA DE COMEDOR LUMA", "category": "COMEDORES & SILLERÍA", "collection": "ATX", "provider": "MOBEL INN", "width": "180 cm", "depth": "110 cm", "height": "76 cm", "seat": "N/D", "volume": "0.39 m³", "packages": "2 bultos", "materials": "Madera maciza y acabados de alta calidad", "special": "", "price": "$23,924.70", "cost": "$8,143.20", "photo_frontal": "ATX_Mesa_de_comedor_Luma_frontal.jpg", "photo_ambiente": "ATX_Mesa_de_comedor_Luma_ambiente.jpg", "photo_swatch": "ATX_Mesa_de_comedor_Luma_swatch.jpg", "drive_url": "https://drive.google.com/drive/folders/1umQvzMJLXFiOwSyWL8d5v0aCWDpx8hQT?usp=drive_link"}, {"id": "MOBJGOMESPARM", "name": "MESA LATERAL KUUN", "category": "MESAS DE CENTRO & LATERALES", "collection": "ATX", "provider": "MOBEL INN", "width": "60 cm", "depth": "60 cm", "height": "53 cm", "seat": "N/D", "volume": "0.25 m³", "packages": "1 bulto", "materials": "Madera maciza y acabados de alta calidad", "special": "", "price": "$23,924.70", "cost": "$8,143.20", "photo_frontal": "ATX_Mesa_lateral_kuun_frontal.jpg", "photo_ambiente": "ATX_Mesa_lateral_kuun_ambiente.jpg", "photo_swatch": "ATX_Mesa_lateral_kuun_swatch.jpg", "drive_url": "https://drive.google.com/drive/folders/1umQvzMJLXFiOwSyWL8d5v0aCWDpx8hQT?usp=drive_link"}, {"id": "ATXCAMAUQSGMB", "name": "SILLA AURA", "category": "COMEDORES & SILLERÍA", "collection": "ATX", "provider": "ARTEX", "width": "62 cm", "depth": "68 cm", "height": "81 cm", "seat": "50 cm", "volume": "0.63 m³", "packages": "1 bulto", "materials": "Madera maciza y acabados de alta calidad", "special": "", "price": "$34,529.80", "cost": "$11,300.80", "photo_frontal": "ATX_Silla_Aura_frontal.jpg", "photo_ambiente": "ATX_Silla_Aura_ambiente.jpg", "photo_swatch": "", "drive_url": "https://drive.google.com/drive/folders/1umQvzMJLXFiOwSyWL8d5v0aCWDpx8hQT?usp=drive_link"}, {"id": "ATXBUFSTHNONT", "name": "SILLA SANTHOMAS", "category": "COMEDORES & SILLERÍA", "collection": "ATX", "provider": "ARTEX", "width": "63 cm", "depth": "54 cm", "height": "81 cm", "seat": "47 cm", "volume": "0.403 m³", "packages": "1 bulto", "materials": "Madera maciza y acabados de alta calidad", "special": "", "price": "$44,537.30", "cost": "$14,576.00", "photo_frontal": "ATX_Silla_Santhomas_frontal.jpg", "photo_ambiente": "ATX_Silla_Santhomas_ambiente.jpg", "photo_swatch": "", "drive_url": "https://drive.google.com/drive/folders/1umQvzMJLXFiOwSyWL8d5v0aCWDpx8hQT?usp=drive_link"}, {"id": "CVVSALLEXPROL", "name": "SILLÓN BALI BAKER OLIVE", "category": "SILLONES OCASIONALES", "collection": "ATX", "provider": "CASA V&V", "width": "100 cm", "depth": "74 cm", "height": "86 cm", "seat": "43 cm", "volume": "0.63 m³", "packages": "1 bulto", "materials": "Madera maciza y acabados de alta calidad", "special": "", "price": "$20,476.50", "cost": "$6,969.50", "photo_frontal": "ATX_Sill_n_Bali_Baker_Olive_frontal.jpg", "photo_ambiente": "ATX_Sill_n_Bali_Baker_Olive_ambiente.jpg", "photo_swatch": "", "drive_url": "https://drive.google.com/drive/folders/1umQvzMJLXFiOwSyWL8d5v0aCWDpx8hQT?usp=drive_link"}, {"id": "YO1PAURRUNARM", "name": "SILLÓN BALI RUSTY NATURAL", "category": "SILLONES OCASIONALES", "collection": "ATX", "provider": "YOI", "width": "100 cm", "depth": "74 cm", "height": "86 cm", "seat": "43 cm", "volume": "0.63 m³", "packages": "1 bulto", "materials": "Madera maciza y acabados de alta calidad", "special": "", "price": "$29,086.20", "cost": "$9,900.00", "photo_frontal": "ATX_Sill_n_Bali_Rusty_Natural_frontal.jpg", "photo_ambiente": "ATX_Sill_n_Bali_Rusty_Natural_ambiente.jpg", "photo_swatch": "", "drive_url": "https://drive.google.com/drive/folders/1umQvzMJLXFiOwSyWL8d5v0aCWDpx8hQT?usp=drive_link"}, {"id": "ATXCAMAUQSGMB", "name": "SOFÁ AURA", "category": "SALAS & SOFÁS", "collection": "ATX", "provider": "ARTEX", "width": "220 cm", "depth": "95 cm", "height": "70 cm", "seat": "42 cm", "volume": "1.6875 m³", "packages": "1 bulto", "materials": "Madera maciza y acabados de alta calidad", "special": "", "price": "$34,529.80", "cost": "$11,300.80", "photo_frontal": "ATX_Sof__Aura_frontal.jpg", "photo_ambiente": "ATX_Sof__Aura_ambiente.jpg", "photo_swatch": "", "drive_url": "https://drive.google.com/drive/folders/1umQvzMJLXFiOwSyWL8d5v0aCWDpx8hQT?usp=drive_link"}, {"id": "ATXCAMSFEKSGM", "name": "SÓFA SANTA FE", "category": "MOBILIARIO", "collection": "ATX", "provider": "ARTEX", "width": "230 cm", "depth": "95 cm", "height": "70 cm", "seat": "42 cm", "volume": "1.6875 m³", "packages": "1 bulto", "materials": "Madera maciza y acabados de alta calidad", "special": "", "price": "$47,025.70", "cost": "$15,390.40", "photo_frontal": "ATX_S_fa_Santa_fe_frontal.jpg", "photo_ambiente": "ATX_S_fa_Santa_fe_ambiente.jpg", "photo_swatch": "", "drive_url": "https://drive.google.com/drive/folders/1umQvzMJLXFiOwSyWL8d5v0aCWDpx8hQT?usp=drive_link"}, {"id": "CVVSALAARIOI", "name": "SALA ARIA OSI FLAX", "category": "SALAS & SOFÁS", "collection": "CVV", "provider": "CASA V&V", "width": "290 cm", "depth": "188 cm", "height": "65 cm", "seat": "50 cm", "volume": "3.98545 m³", "packages": "2 bultos", "materials": "Textil texturizado Osi Flax", "special": "", "price": "$42,724.00", "cost": "$14,541.90", "photo_frontal": "CVV_Sala_Aria_Osi_Flax_frontal.jpg", "photo_ambiente": "CVV_Sala_Aria_Osi_Flax_ambiente.jpg", "photo_swatch": "CVV_Sala_Aria_Osi_Flax_swatch.jpg", "drive_url": "https://drive.google.com/drive/folders/1umQvzMJLXFiOwSyWL8d5v0aCWDpx8hQT?usp=drive_link"}, {"id": "CVVSALAARIOI", "name": "SALA ARIA OSI IVORY", "category": "SALAS & SOFÁS", "collection": "CVV", "provider": "CASA V&V", "width": "290 cm", "depth": "188 cm", "height": "65 cm", "seat": "50 cm", "volume": "3.98545 m³", "packages": "2 bultos", "materials": "Textil de textura bouclé Osi Ivory", "special": "", "price": "$42,724.00", "cost": "$14,541.90", "photo_frontal": "CVV_Sala_Aria_Osi_Ivory_frontal.jpg", "photo_ambiente": "CVV_Sala_Aria_Osi_Ivory_ambiente.jpg", "photo_swatch": "CVV_Sala_Aria_Osi_Ivory_swatch.jpg", "drive_url": "https://drive.google.com/drive/folders/1umQvzMJLXFiOwSyWL8d5v0aCWDpx8hQT?usp=drive_link"}, {"id": "CVVSALAARIOI", "name": "SALA LEXY PRISMA OLIVO", "category": "SALAS & SOFÁS", "collection": "CVV", "provider": "CASA V&V", "width": "279 cm", "depth": "140 cm", "height": "63 cm", "seat": "42 cm", "volume": "3.57 m³", "packages": "2 bultos", "materials": "Textil de alto tráfico Prisma Olivo", "special": "", "price": "$42,724.00", "cost": "$14,541.90", "photo_frontal": "CVV_Sala_Lexy_Prisma_Olivo_frontal.jpg", "photo_ambiente": "CVV_Sala_Lexy_Prisma_Olivo_ambiente.jpg", "photo_swatch": "CVV_Sala_Lexy_Prisma_Olivo_swatch.jpg", "drive_url": "https://drive.google.com/drive/folders/1umQvzMJLXFiOwSyWL8d5v0aCWDpx8hQT?usp=drive_link"}, {"id": "CVVSALAARIOI", "name": "SALA LUMNO BAKER LIMEN", "category": "SALAS & SOFÁS", "collection": "CVV", "provider": "CASA V&V", "width": "392 cm", "depth": "110 cm", "height": "70 cm", "seat": "45 cm", "volume": "3.57 m³", "packages": "4 bultos", "materials": "Madera maciza y acabados de alta calidad", "special": "", "price": "$42,724.00", "cost": "$14,541.90", "photo_frontal": "CVV_Sala_Lumno_Baker_Limen_frontal.jpg", "photo_ambiente": "CVV_Sala_Lumno_Baker_Limen_ambiente.jpg", "photo_swatch": "CVV_Sala_Lumno_Baker_Limen_swatch.jpg", "drive_url": "https://drive.google.com/drive/folders/1umQvzMJLXFiOwSyWL8d5v0aCWDpx8hQT?usp=drive_link"}, {"id": "CVVSALAARIOI", "name": "SALA LUMNO BAKER MUSHROOM", "category": "SALAS & SOFÁS", "collection": "CVV", "provider": "CASA V&V", "width": "392 cm", "depth": "110 cm", "height": "70 cm", "seat": "45 cm", "volume": "3.57 m³", "packages": "4 bultos", "materials": "Madera maciza y acabados de alta calidad", "special": "", "price": "$42,724.00", "cost": "$14,541.90", "photo_frontal": "CVV_Sala_Lumno_Baker_Mushroom_frontal.jpg", "photo_ambiente": "CVV_Sala_Lumno_Baker_Mushroom_ambiente.jpg", "photo_swatch": "CVV_Sala_Lumno_Baker_Mushroom_swatch.jpg", "drive_url": "https://drive.google.com/drive/folders/1umQvzMJLXFiOwSyWL8d5v0aCWDpx8hQT?usp=drive_link"}, {"id": "CVVSALAARIOI", "name": "SALA PIERO FOREVER BUTTERMILK", "category": "SALAS & SOFÁS", "collection": "CVV", "provider": "CASA V&V", "width": "290 cm", "depth": "188 cm", "height": "65 cm", "seat": "50 cm", "volume": "3.98545 m³", "packages": "2 bultos", "materials": "Textil suave Forever Buttermilk (Marfil contemporáneo)", "special": "Módulos seccionales de configuración versátil.", "price": "$42,724.00", "cost": "$14,541.90", "photo_frontal": "CVV_Sala_Piero_Forever_Buttermilk_frontal.jpg", "photo_ambiente": "CVV_Sala_Piero_Forever_Buttermilk_ambiente.jpg", "photo_swatch": "CVV_Sala_Piero_Forever_Buttermilk_swatch.jpg", "drive_url": "https://drive.google.com/drive/folders/1umQvzMJLXFiOwSyWL8d5v0aCWDpx8hQT?usp=drive_link"}, {"id": "CVVSALAARIOI", "name": "SALA PIERO FOREVER CURRY", "category": "SALAS & SOFÁS", "collection": "CVV", "provider": "CASA V&V", "width": "290 cm", "depth": "188 cm", "height": "65 cm", "seat": "50 cm", "volume": "3.98545 m³", "packages": "2 bultos", "materials": "Textil texturizado Forever Curry (Mostaza cálido)", "special": "Módulos seccionales independientes con unión oculta.", "price": "$42,724.00", "cost": "$14,541.90", "photo_frontal": "CVV_Sala_Piero_Forever_Curry_frontal.jpg", "photo_ambiente": "CVV_Sala_Piero_Forever_Curry_ambiente.jpg", "photo_swatch": "CVV_Sala_Piero_Forever_Curry_swatch.jpg", "drive_url": "https://drive.google.com/drive/folders/1umQvzMJLXFiOwSyWL8d5v0aCWDpx8hQT?usp=drive_link"}, {"id": "MOBBASKSYUT", "name": "BASE DE CAMA YUTE NUE", "category": "RECÁMARAS & BURÓS", "collection": "MBI", "provider": "MOBEL INN", "width": "206 cm", "depth": "195 cm", "height": "35 cm", "seat": "N/D", "volume": "1.688 m³", "packages": "2 bulto", "materials": "Estructura reforzada con detalle en tejido de Yute natural", "special": "Fibras orgánicas de yute con tratamiento protector.", "price": "$18,096.90", "cost": "$6,159.60", "photo_frontal": "MBI_Base_de_cama_Yute_Nue_frontal.jpg", "photo_ambiente": "MBI_Base_de_cama_Yute_Nue_ambiente.jpg", "photo_swatch": "MBI_Base_de_cama_Yute_Nue_swatch.jpg", "drive_url": "https://drive.google.com/drive/folders/1umQvzMJLXFiOwSyWL8d5v0aCWDpx8hQT?usp=drive_link"}, {"id": "MOBBUFPLAPAR", "name": "BUFETERA BARPE NUEZ", "category": "BUFETEAS & CREDENZAS", "collection": "MBI", "provider": "MOBEL INN", "width": "220 cm", "depth": "40 cm", "height": "80 cm", "seat": "N/D", "volume": "0.81 m³", "packages": "1 bulto", "materials": "Madera de Nogal / Chapa Nuez Natural", "special": "", "price": "$48,769.60", "cost": "$16,599.60", "photo_frontal": "MBI_Bufetera_Barpe_Nuez_frontal.jpg", "photo_ambiente": "MBI_Bufetera_Barpe_Nuez_ambiente.jpg", "photo_swatch": "MBI_Bufetera_Barpe_Nuez_swatch.jpg", "drive_url": "https://drive.google.com/drive/folders/1umQvzMJLXFiOwSyWL8d5v0aCWDpx8hQT?usp=drive_link"}, {"id": "MOBCREBEJROMO", "name": "BUFETERA BEJUCO NUEZ", "category": "BUFETEAS & CREDENZAS", "collection": "MBI", "provider": "MOBEL INN", "width": "220 cm", "depth": "40 cm", "height": "80 cm", "seat": "N/D", "volume": "0.860 m³", "packages": "1 bulto", "materials": "Madera de Nogal / Chapa Nuez Natural", "special": "", "price": "$30,366.00", "cost": "$10,335.60", "photo_frontal": "MBI_Bufetera_Bejuco_Nuez_frontal.jpg", "photo_ambiente": "MBI_Bufetera_Bejuco_Nuez_ambiente.jpg", "photo_swatch": "MBI_Bufetera_Bejuco_Nuez_swatch.jpg", "drive_url": "https://drive.google.com/drive/folders/1umQvzMJLXFiOwSyWL8d5v0aCWDpx8hQT?usp=drive_link"}, {"id": "MOBBUFPLAPAR", "name": "BUFETERA MADRID NUEZ", "category": "BUFETEAS & CREDENZAS", "collection": "MBI", "provider": "MOBEL INN", "width": "180 cm", "depth": "40 cm", "height": "80 cm", "seat": "N/D", "volume": "0.81 m³", "packages": "1 bulto", "materials": "Madera de Nogal / Chapa Nuez Natural", "special": "", "price": "$48,769.60", "cost": "$16,599.60", "photo_frontal": "MBI_Bufetera_Madrid_Nuez_frontal.jpg", "photo_ambiente": "MBI_Bufetera_Madrid_Nuez_ambiente.jpg", "photo_swatch": "MBI_Bufetera_Madrid_Nuez_swatch.jpg", "drive_url": "https://drive.google.com/drive/folders/1umQvzMJLXFiOwSyWL8d5v0aCWDpx8hQT?usp=drive_link"}, {"id": "MOBBUFPLAPAR", "name": "BUFETERA PLATOS NUEZ", "category": "BUFETEAS & CREDENZAS", "collection": "MBI", "provider": "MOBEL INN", "width": "240 cm", "depth": "40 cm", "height": "80 cm", "seat": "N/D", "volume": "0.219 m³", "packages": "1 bulto", "materials": "Madera de Nogal / Chapa Nuez Natural", "special": "", "price": "$48,769.60", "cost": "$16,599.60", "photo_frontal": "MBI_Bufetera_Platos_Nuez_frontal.jpg", "photo_ambiente": "MBI_Bufetera_Platos_Nuez_ambiente.jpg", "photo_swatch": "MBI_Bufetera_Platos_Nuez_swatch.jpg", "drive_url": "https://drive.google.com/drive/folders/1umQvzMJLXFiOwSyWL8d5v0aCWDpx8hQT?usp=drive_link"}, {"id": "MOBBURMADROMO", "name": "CABECERA MADRID KS NUEZ", "category": "RECÁMARAS & BURÓS", "collection": "MBI", "provider": "MOBEL INN", "width": "246 cm", "depth": "40 cm", "height": "140 cm", "seat": "N/D", "volume": "1.637 m³", "packages": "1 bulto", "materials": "Madera de Nogal / Chapa Nuez Natural", "special": "", "price": "$27,298.70", "cost": "$9,291.60", "photo_frontal": "MBI_Cabecera_Madrid_KS_Nuez_frontal.jpg", "photo_ambiente": "MBI_Cabecera_Madrid_KS_Nuez_ambiente.jpg", "photo_swatch": "MBI_Cabecera_Madrid_KS_Nuez_swatch.jpg", "drive_url": "https://drive.google.com/drive/folders/1umQvzMJLXFiOwSyWL8d5v0aCWDpx8hQT?usp=drive_link"}, {"id": "MOBCTVPUERM", "name": "CENTRO DE TV PUERTAS CORREDIZAS NUEZ", "category": "COMPLEMENTOS & TV", "collection": "MBI", "provider": "MOBEL INN", "width": "330 cm", "depth": "40 cm", "height": "240 cm", "seat": "N/D", "volume": "3.748 m³", "packages": "1 bulto", "materials": "Madera de Nogal / Chapa Nuez Natural", "special": "", "price": "$98,152.70", "cost": "$33,408.00", "photo_frontal": "MBI_Centro_de_tv_Puertas_corredizas_Nuez_frontal.jpg", "photo_ambiente": "MBI_Centro_de_tv_Puertas_corredizas_Nuez_ambiente.jpg", "photo_swatch": "MBI_Centro_de_tv_Puertas_corredizas_Nuez_swatch.jpg", "drive_url": "https://drive.google.com/drive/folders/1umQvzMJLXFiOwSyWL8d5v0aCWDpx8hQT?usp=drive_link"}, {"id": "MOBCREBEJROMO", "name": "CREDENZA BEJUCO", "category": "BUFETEAS & CREDENZAS", "collection": "MBI", "provider": "MOBEL INN", "width": "220 cm", "depth": "40 cm", "height": "80 cm", "seat": "N/D", "volume": "0.81 m³", "packages": "1 bultos", "materials": "Madera maciza y tejido artesanal de Bejuco natural", "special": "Tejido en bejuco 100% artesanal de alta durabilidad.", "price": "$30,366.00", "cost": "$10,335.60", "photo_frontal": "MBI_Credenza_Bejuco_frontal.jpg", "photo_ambiente": "MBI_Credenza_Bejuco_ambiente.jpg", "photo_swatch": "MBI_Credenza_Bejuco_swatch.jpg", "drive_url": "https://drive.google.com/drive/folders/1umQvzMJLXFiOwSyWL8d5v0aCWDpx8hQT?usp=drive_link"}, {"id": "MOBESPCOR45RM", "name": "ESPEJO ESCALONADO DE PIE NUEZ", "category": "COMPLEMENTOS & TV", "collection": "MBI", "provider": "MOBEL INN", "width": "240 cm", "depth": "15 cm", "height": "120 cm", "seat": "N/D", "volume": "0.848 m³", "packages": "1 bulto", "materials": "Madera de Nogal / Chapa Nuez Natural", "special": "", "price": "$24,231.50", "cost": "$8,247.60", "photo_frontal": "MBI_Espejo_Escalonado_de_pie_Nuez_frontal.jpg", "photo_ambiente": "MBI_Espejo_Escalonado_de_pie_Nuez_ambiente.jpg", "photo_swatch": "MBI_Espejo_Escalonado_de_pie_Nuez_swatch.jpg", "drive_url": "https://drive.google.com/drive/folders/1umQvzMJLXFiOwSyWL8d5v0aCWDpx8hQT?usp=drive_link"}, {"id": "MOBESPCOR45RM", "name": "ESPEJO NADIA NUEZ", "category": "COMPLEMENTOS & TV", "collection": "MBI", "provider": "MOBEL INN", "width": "260 cm", "depth": "15 cm", "height": "120 cm", "seat": "N/D", "volume": "0.928 m³", "packages": "1 bulto", "materials": "Madera de Nogal / Chapa Nuez Natural", "special": "", "price": "$24,231.50", "cost": "$8,247.60", "photo_frontal": "MBI_Espejo_Nadia_Nuez_frontal.jpg", "photo_ambiente": "MBI_Espejo_Nadia_Nuez_ambiente.jpg", "photo_swatch": "MBI_Espejo_Nadia_Nuez_swatch.jpg", "drive_url": "https://drive.google.com/drive/folders/1umQvzMJLXFiOwSyWL8d5v0aCWDpx8hQT?usp=drive_link"}, {"id": "MOBCREBEJROMO", "name": "MESA DE CENTRO BEJUCO NUEZ", "category": "MESAS DE CENTRO & LATERALES", "collection": "MBI", "provider": "MOBEL INN", "width": "125 cm", "depth": "60 cm", "height": "42 cm", "seat": "N/D", "volume": "0.3971 m³", "packages": "1 bulto", "materials": "Madera de Nogal / Chapa Nuez Natural", "special": "", "price": "$30,366.00", "cost": "$10,335.60", "photo_frontal": "MBI_Mesa_de_centro_Bejuco_Nuez_frontal.jpg", "photo_ambiente": "MBI_Mesa_de_centro_Bejuco_Nuez_ambiente.jpg", "photo_swatch": "MBI_Mesa_de_centro_Bejuco_Nuez_swatch.jpg", "drive_url": "https://drive.google.com/drive/folders/1umQvzMJLXFiOwSyWL8d5v0aCWDpx8hQT?usp=drive_link"}, {"id": "MOBJGOMESPARM", "name": "MESA DE COMEDOR BARRIL 8P NUEZ", "category": "COMEDORES & SILLERÍA", "collection": "MBI", "provider": "MOBEL INN", "width": "180 cm", "depth": "120 cm", "height": "78 cm", "seat": "N/D", "volume": "0.41 m³", "packages": "2 bultos", "materials": "Madera de Nogal / Chapa Nuez Natural", "special": "", "price": "$23,924.70", "cost": "$8,143.20", "photo_frontal": "MBI_Mesa_de_comedor_Barril_8p_Nuez_frontal.jpg", "photo_ambiente": "MBI_Mesa_de_comedor_Barril_8p_Nuez_ambiente.jpg", "photo_swatch": "MBI_Mesa_de_comedor_Barril_8p_Nuez_swatch.jpg", "drive_url": "https://drive.google.com/drive/folders/1umQvzMJLXFiOwSyWL8d5v0aCWDpx8hQT?usp=drive_link"}, {"id": "MOBJGOMESPARM", "name": "MESA DE COMEDOR KAMKO NUEZ", "category": "COMEDORES & SILLERÍA", "collection": "MBI", "provider": "MOBEL INN", "width": "240 cm", "depth": "120 cm", "height": "78 cm", "seat": "N/D", "volume": "0.48 m³", "packages": "2 bultos", "materials": "Madera de Nogal / Chapa Nuez Natural", "special": "", "price": "$23,924.70", "cost": "$8,143.20", "photo_frontal": "MBI_Mesa_de_comedor_Kamko_Nuez_frontal.jpg", "photo_ambiente": "MBI_Mesa_de_comedor_Kamko_Nuez_ambiente.jpg", "photo_swatch": "MBI_Mesa_de_comedor_Kamko_Nuez_swatch.jpg", "drive_url": "https://drive.google.com/drive/folders/1umQvzMJLXFiOwSyWL8d5v0aCWDpx8hQT?usp=drive_link"}, {"id": "MOBJGOMESPARM", "name": "MESA LATERAL PATONAS SET 3 NUEZ", "category": "MESAS DE CENTRO & LATERALES", "collection": "MBI", "provider": "MOBEL INN", "width": "GR : 45 ,MD 45 CH 45 cm", "depth": "GR : 45 ,MD 45 CH 45 cm", "height": "60 cm", "seat": "N/D", "volume": "0.39 m³", "packages": "3 bulto", "materials": "Madera de Nogal / Chapa Nuez Natural", "special": "", "price": "$23,924.70", "cost": "$8,143.20", "photo_frontal": "MBI_Mesa_lateral_Patonas_set_3_Nuez_frontal.jpg", "photo_ambiente": "MBI_Mesa_lateral_Patonas_set_3_Nuez_ambiente.jpg", "photo_swatch": "MBI_Mesa_lateral_Patonas_set_3_Nuez_swatch.jpg", "drive_url": "https://drive.google.com/drive/folders/1umQvzMJLXFiOwSyWL8d5v0aCWDpx8hQT?usp=drive_link"}, {"id": "MOBBURAFRROMO", "name": "DE BURÓ AFRICA NUEZ", "category": "RECÁMARAS & BURÓS", "collection": "MBI", "provider": "MOBEL INN", "width": "50 cm", "depth": "40 cm", "height": "60 cm", "seat": "N/D", "volume": "0.210 m³", "packages": "1 bulto", "materials": "Madera de Nogal / Chapa Nuez Natural", "special": "", "price": "$13,802.70", "cost": "$4,698.00", "photo_frontal": "MBI_de_Bur__Africa_Nuez_frontal.jpg", "photo_ambiente": "MBI_de_Bur__Africa_Nuez_ambiente.jpg", "photo_swatch": "MBI_de_Bur__Africa_Nuez_swatch.jpg", "drive_url": "https://drive.google.com/drive/folders/1umQvzMJLXFiOwSyWL8d5v0aCWDpx8hQT?usp=drive_link"}, {"id": "MOBBURBARLED", "name": "DE BURÓ BARPE NUEZ", "category": "RECÁMARAS & BURÓS", "collection": "MBI", "provider": "MOBEL INN", "width": "70 cm", "depth": "40 cm", "height": "60 cm", "seat": "N/D", "volume": "0.219 m³", "packages": "1 bulto", "materials": "Madera de Nogal / Chapa Nuez Natural", "special": "", "price": "$16,563.30", "cost": "$5,637.60", "photo_frontal": "MBI_de_Bur__Barpe_Nuez_frontal.jpg", "photo_ambiente": "MBI_de_Bur__Barpe_Nuez_ambiente.jpg", "photo_swatch": "MBI_de_Bur__Barpe_Nuez_swatch.jpg", "drive_url": "https://drive.google.com/drive/folders/1umQvzMJLXFiOwSyWL8d5v0aCWDpx8hQT?usp=drive_link"}, {"id": "MOBCREBEJROMO", "name": "DE BURÓ BEJUCO NUEZ", "category": "RECÁMARAS & BURÓS", "collection": "MBI", "provider": "MOBEL INN", "width": "70 cm", "depth": "40 cm", "height": "60 cm", "seat": "N/D", "volume": "0.219 m³", "packages": "1 bulto", "materials": "Madera de Nogal / Chapa Nuez Natural", "special": "", "price": "$30,366.00", "cost": "$10,335.60", "photo_frontal": "MBI_de_Bur__Bejuco_Nuez_frontal.jpg", "photo_ambiente": "MBI_de_Bur__Bejuco_Nuez_ambiente.jpg", "photo_swatch": "MBI_de_Bur__Bejuco_Nuez_swatch.jpg", "drive_url": "https://drive.google.com/drive/folders/1umQvzMJLXFiOwSyWL8d5v0aCWDpx8hQT?usp=drive_link"}, {"id": "MOBBURMADROMO", "name": "DE BURÓ MADRID NUEZ", "category": "RECÁMARAS & BURÓS", "collection": "MBI", "provider": "MOBEL INN", "width": "50 cm", "depth": "40 cm", "height": "60 cm", "seat": "N/D", "volume": "0.160 m³", "packages": "1 bulto", "materials": "Madera de Nogal / Chapa Nuez Natural", "special": "", "price": "$27,298.70", "cost": "$9,291.60", "photo_frontal": "MBI_de_Bur__Madrid_Nuez_frontal.jpg", "photo_ambiente": "MBI_de_Bur__Madrid_Nuez_ambiente.jpg", "photo_swatch": "MBI_de_Bur__Madrid_Nuez_swatch.jpg", "drive_url": "https://drive.google.com/drive/folders/1umQvzMJLXFiOwSyWL8d5v0aCWDpx8hQT?usp=drive_link"}, {"id": "MOBBUFPLAPAR", "name": "DE BURÓ PLATOS NUEZ", "category": "RECÁMARAS & BURÓS", "collection": "MBI", "provider": "MOBEL INN", "width": "70 cm", "depth": "40 cm", "height": "60 cm", "seat": "N/D", "volume": "0.21 m³", "packages": "1 bulto", "materials": "Madera de Nogal / Chapa Nuez Natural", "special": "", "price": "$48,769.60", "cost": "$16,599.60", "photo_frontal": "MBI_de_Bur__Platos_Nuez_frontal.jpg", "photo_ambiente": "MBI_de_Bur__Platos_Nuez_ambiente.jpg", "photo_swatch": "MBI_de_Bur__Platos_Nuez_swatch.jpg", "drive_url": "https://drive.google.com/drive/folders/1umQvzMJLXFiOwSyWL8d5v0aCWDpx8hQT?usp=drive_link"}, {"id": "MOBBASKSYUT", "name": "DE BURÓ YUTE NUEZ", "category": "RECÁMARAS & BURÓS", "collection": "MBI", "provider": "MOBEL INN", "width": "70 cm", "depth": "40 cm", "height": "60 cm", "seat": "N/D", "volume": "0.219 m³", "packages": "1 bulto", "materials": "Madera de Nogal / Chapa Nuez Natural", "special": "", "price": "$18,096.90", "cost": "$6,159.60", "photo_frontal": "MBI_de_Bur__Yute_Nuez_frontal.jpg", "photo_ambiente": "MBI_de_Bur__Yute_Nuez_ambiente.jpg", "photo_swatch": "MBI_de_Bur__Yute_Nuez_swatch.jpg", "drive_url": "https://drive.google.com/drive/folders/1umQvzMJLXFiOwSyWL8d5v0aCWDpx8hQT?usp=drive_link"}, {"id": "CVVSALAARIOI", "name": "SALA ZAMA", "category": "SALAS & SOFÁS", "collection": "YOI", "provider": "CASA V&V", "width": "225 cm", "depth": "90 cm", "height": "92 cm", "seat": "N/D", "volume": "2.119 m³", "packages": "1 bultos", "materials": "Madera maciza y acabados de alta calidad", "special": "", "price": "$42,724.00", "cost": "$14,541.90", "photo_frontal": "YOI_Sala_Zama_frontal.jpg", "photo_ambiente": "YOI_Sala_Zama_ambiente.jpg", "photo_swatch": "YOI_Sala_Zama_swatch.jpg", "drive_url": "https://drive.google.com/drive/folders/1umQvzMJLXFiOwSyWL8d5v0aCWDpx8hQT?usp=drive_link"}, {"id": "YO1PAURRUNARM", "name": "SILLÓN OCASIONAL AARMIN", "category": "SILLONES OCASIONALES", "collection": "YOI", "provider": "YOI", "width": "77 cm", "depth": "87 cm", "height": "90 cm", "seat": "N/D", "volume": "0.648 m³", "packages": "1 bulto", "materials": "Madera maciza y acabados de alta calidad", "special": "", "price": "$29,086.20", "cost": "$9,900.00", "photo_frontal": "YOI_Sill_n_ocasional_Aarmin_frontal.jpg", "photo_ambiente": "YOI_Sill_n_ocasional_Aarmin_ambiente.jpg", "photo_swatch": "", "drive_url": "https://drive.google.com/drive/folders/1umQvzMJLXFiOwSyWL8d5v0aCWDpx8hQT?usp=drive_link"}, {"id": "YO1PAURRUNARM", "name": "SILLÓN OCASIONAL AUREN", "category": "SILLONES OCASIONALES", "collection": "YOI", "provider": "YOI", "width": "86 cm", "depth": "90 cm", "height": "87 cm", "seat": "N/D", "volume": "0.795 m³", "packages": "1 bulto", "materials": "Madera maciza y acabados de alta calidad", "special": "", "price": "$29,086.20", "cost": "$9,900.00", "photo_frontal": "YOI_Sill_n_ocasional_Auren_frontal.jpg", "photo_ambiente": "YOI_Sill_n_ocasional_Auren_ambiente.jpg", "photo_swatch": "YOI_Sill_n_ocasional_Auren_swatch.jpg", "drive_url": "https://drive.google.com/drive/folders/1umQvzMJLXFiOwSyWL8d5v0aCWDpx8hQT?usp=drive_link"}, {"id": "YO1PAURRUNARM", "name": "SILLÓN OCASIONAL DUE LONGUE", "category": "SILLONES OCASIONALES", "collection": "YOI", "provider": "YOI", "width": "85 cm", "depth": "85 cm", "height": "75 cm", "seat": "N/D", "volume": "0.648 m³", "packages": "1 bulto", "materials": "Madera maciza y acabados de alta calidad", "special": "", "price": "$29,086.20", "cost": "$9,900.00", "photo_frontal": "YOI_Sill_n_ocasional_Due_Longue_frontal.jpg", "photo_ambiente": "YOI_Sill_n_ocasional_Due_Longue_ambiente.jpg", "photo_swatch": "", "drive_url": "https://drive.google.com/drive/folders/1umQvzMJLXFiOwSyWL8d5v0aCWDpx8hQT?usp=drive_link"}, {"id": "YO1PAURRUNARM", "name": "SILLÓN OCASIONAL ZUR PIEL", "category": "SILLONES OCASIONALES", "collection": "YOI", "provider": "YOI", "width": "69 cm", "depth": "86 cm", "height": "82 cm", "seat": "N/D", "volume": "0.586 m³", "packages": "1 bulto", "materials": "Tapicería en Piel Genuina de importación (Sand 07)", "special": "Piel natural curtida de tacto suave y alta resiliencia.", "price": "$29,086.20", "cost": "$9,900.00", "photo_frontal": "YOI_Sill_n_ocasional_Zur_Piel_frontal.jpg", "photo_ambiente": "YOI_Sill_n_ocasional_Zur_Piel_ambiente.jpg", "photo_swatch": "YOI_Sill_n_ocasional_Zur_Piel_swatch.jpg", "drive_url": "https://drive.google.com/drive/folders/1umQvzMJLXFiOwSyWL8d5v0aCWDpx8hQT?usp=drive_link"}, {"id": "YO1PAURRUNARM", "name": "SILLÓN OCASIONAL ZUR PIEL SAND 07", "category": "SILLONES OCASIONALES", "collection": "YOI", "provider": "YOI", "width": "69 cm", "depth": "86 cm", "height": "82 cm", "seat": "N/D", "volume": "0.586 m³", "packages": "1 bulto", "materials": "Tapicería en Piel Genuina de importación (Sand 07)", "special": "Piel natural curtida de tacto suave y alta resiliencia.", "price": "$29,086.20", "cost": "$9,900.00", "photo_frontal": "YOI_Sill_n_ocasional_Zur_Piel_Sand_07_frontal.jpg", "photo_ambiente": "YOI_Sill_n_ocasional_Zur_Piel_Sand_07_ambiente.jpg", "photo_swatch": "YOI_Sill_n_ocasional_Zur_Piel_Sand_07_swatch.jpg", "drive_url": "https://drive.google.com/drive/folders/1umQvzMJLXFiOwSyWL8d5v0aCWDpx8hQT?usp=drive_link"}];
+        const products = [{"id": "CRT-001", "name": "SALA DONATI", "category": "SALAS & SOFÁS", "collection": "ARM", "width": "N/D", "depth": "N/D", "height": "N/D", "seat": "N/D", "volume": "N/D", "packages": "1 bulto", "materials": "Madera maciza y acabados finos", "price": "$ Consultar", "cost": "$ Consultar", "photo": "02_FOTOS_LIMPIAS_PRODUCTOS/ARM_sala_Donati.jpg"}, {"id": "CRT-002", "name": "SALA MARENO", "category": "SALAS & SOFÁS", "collection": "ARM", "width": "N/D", "depth": "N/D", "height": "N/D", "seat": "N/D", "volume": "N/D", "packages": "1 bulto", "materials": "Madera maciza y acabados finos", "price": "$ Consultar", "cost": "$ Consultar", "photo": "02_FOTOS_LIMPIAS_PRODUCTOS/ARM_sala_Mareno.jpg"}, {"id": "CRT-003", "name": "SALA MATERA", "category": "SALAS & SOFÁS", "collection": "ARM", "width": "N/D", "depth": "N/D", "height": "N/D", "seat": "N/D", "volume": "N/D", "packages": "1 bulto", "materials": "Madera maciza y acabados finos", "price": "$ Consultar", "cost": "$ Consultar", "photo": "02_FOTOS_LIMPIAS_PRODUCTOS/ARM_sala_Matera.jpg"}, {"id": "CRT-004", "name": "SALA MONET", "category": "SALAS & SOFÁS", "collection": "ARM", "width": "N/D", "depth": "N/D", "height": "N/D", "seat": "N/D", "volume": "N/D", "packages": "1 bulto", "materials": "Madera maciza y acabados finos", "price": "$ Consultar", "cost": "$ Consultar", "photo": "02_FOTOS_LIMPIAS_PRODUCTOS/ARM_sala_Monet.jpg"}, {"id": "CRT-005", "name": "CAMA AURA", "category": "RECÁMARAS & BURÓS", "collection": "ATX", "width": "184 cm", "depth": "N/D", "height": "115 cm", "seat": "N/D", "volume": "N/D", "packages": "1 bulto", "materials": "Madera maciza y acabados finos", "price": "$ Consultar", "cost": "$ Consultar", "photo": "02_FOTOS_LIMPIAS_PRODUCTOS/ATX_Cama_Aura.jpg"}, {"id": "CRT-006", "name": "CAMA SANTA FE", "category": "RECÁMARAS & BURÓS", "collection": "ATX", "width": "250 cm", "depth": "N/D", "height": "115 cm", "seat": "N/D", "volume": "N/D", "packages": "1 bulto", "materials": "Madera maciza y acabados finos", "price": "$ Consultar", "cost": "$ Consultar", "photo": "02_FOTOS_LIMPIAS_PRODUCTOS/ATX_Cama_Santa_fe.jpg"}, {"id": "CRT-007", "name": "BUFETERA BALI", "category": "BUFETEAS & CREDENZAS", "collection": "ATX", "width": "200 cm", "depth": "51 cm", "height": "79 cm", "seat": "N/D", "volume": "0.964 m³", "packages": "1 bulto", "materials": "Madera maciza y acabados finos", "price": "$ Consultar", "cost": "$ Consultar", "photo": "02_FOTOS_LIMPIAS_PRODUCTOS/ATX_Bufetera_Bali.jpg"}, {"id": "CRT-008", "name": "BUFETERA LUMA", "category": "BUFETEAS & CREDENZAS", "collection": "ATX", "width": "183 cm", "depth": "38 cm", "height": "77 cm", "seat": "N/D", "volume": "0.647 m³", "packages": "1 bultos", "materials": "Madera maciza y acabados finos", "price": "$ Consultar", "cost": "$ Consultar", "photo": "02_FOTOS_LIMPIAS_PRODUCTOS/ATX_Bufetera_Luma.jpg"}, {"id": "CRT-009", "name": "BUFETERA SANTHOMAS", "category": "BUFETEAS & CREDENZAS", "collection": "ATX", "width": "240 cm", "depth": "41 cm", "height": "80 cm", "seat": "N/D", "volume": "0.957 m³", "packages": "1 bulto", "materials": "Madera maciza y acabados finos", "price": "$ Consultar", "cost": "$ Consultar", "photo": "02_FOTOS_LIMPIAS_PRODUCTOS/ATX_Bufetera_Santhomas.jpg"}, {"id": "CRT-010", "name": "MESA DE CENTRO KUUN", "category": "MESAS DE CENTRO & LATERALES", "collection": "ATX", "width": "110 cm", "depth": "110 cm", "height": "35 cm", "seat": "N/D", "volume": "0.529 m³", "packages": "1 bulto", "materials": "Madera maciza y acabados finos", "price": "$ Consultar", "cost": "$ Consultar", "photo": "02_FOTOS_LIMPIAS_PRODUCTOS/ATX_Mesa_de_centro_Kuun.jpg"}, {"id": "CRT-011", "name": "MESA DE COMEDOR LUMA", "category": "COMEDORES & SILLERÍA", "collection": "ATX", "width": "180 cm", "depth": "110 cm", "height": "76 cm", "seat": "N/D", "volume": "N/D", "packages": "2 bultos", "materials": "Madera maciza y acabados finos", "price": "$ Consultar", "cost": "$ Consultar", "photo": "02_FOTOS_LIMPIAS_PRODUCTOS/ATX_Mesa_de_comedor_Luma.jpg"}, {"id": "CRT-012", "name": "MESA LATERAL KUUN", "category": "MESAS DE CENTRO & LATERALES", "collection": "ATX", "width": "60 cm", "depth": "60 cm", "height": "53 cm", "seat": "N/D", "volume": "0.25 m³", "packages": "1 bulto", "materials": "Madera maciza y acabados finos", "price": "$ Consultar", "cost": "$ Consultar", "photo": "02_FOTOS_LIMPIAS_PRODUCTOS/ATX_Mesa_lateral_kuun.jpg"}, {"id": "CRT-013", "name": "SILLA AURA", "category": "COMEDORES & SILLERÍA", "collection": "ATX", "width": "62 cm", "depth": "68 cm", "height": "81 cm", "seat": "50 cm", "volume": "0.63 m³", "packages": "1 bulto", "materials": "Madera maciza y acabados finos", "price": "$ Consultar", "cost": "$ Consultar", "photo": "02_FOTOS_LIMPIAS_PRODUCTOS/ATX_Silla_Aura.jpg"}, {"id": "CRT-014", "name": "SILLA SANTHOMAS", "category": "COMEDORES & SILLERÍA", "collection": "ATX", "width": "63 cm", "depth": "54 cm", "height": "81 cm", "seat": "47 cm", "volume": "0.403 m³", "packages": "1 bulto", "materials": "Madera maciza y acabados finos", "price": "$ Consultar", "cost": "$ Consultar", "photo": "02_FOTOS_LIMPIAS_PRODUCTOS/ATX_Silla_Santhomas.jpg"}, {"id": "CRT-015", "name": "SILLÓN BALI BAKER OLIVE", "category": "SILLONES OCASIONALES", "collection": "ATX", "width": "100 cm", "depth": "74 cm", "height": "86 cm", "seat": "43 cm", "volume": "0.63 m³", "packages": "1 bulto", "materials": "Madera maciza y acabados finos", "price": "$ Consultar", "cost": "$ Consultar", "photo": "02_FOTOS_LIMPIAS_PRODUCTOS/ATX_Sill_n_Bali_Baker_Olive.jpg"}, {"id": "CRT-016", "name": "SILLÓN BALI RUSTY NATURAL", "category": "SILLONES OCASIONALES", "collection": "ATX", "width": "100 cm", "depth": "74 cm", "height": "86 cm", "seat": "43 cm", "volume": "0.63 m³", "packages": "1 bulto", "materials": "Madera maciza y acabados finos", "price": "$ Consultar", "cost": "$ Consultar", "photo": "02_FOTOS_LIMPIAS_PRODUCTOS/ATX_Sill_n_Bali_Rusty_Natural.jpg"}, {"id": "CRT-017", "name": "SOFÁ AURA", "category": "SALAS & SOFÁS", "collection": "ATX", "width": "220 cm", "depth": "95 cm", "height": "70 cm", "seat": "42 cm", "volume": "1.6875 m³", "packages": "1 bulto", "materials": "Madera maciza y acabados finos", "price": "$ Consultar", "cost": "$ Consultar", "photo": "02_FOTOS_LIMPIAS_PRODUCTOS/ATX_Sof__Aura.jpg"}, {"id": "CRT-018", "name": "SÓFA SANTA FE", "category": "MOBILIARIO", "collection": "ATX", "width": "230 cm", "depth": "95 cm", "height": "70 cm", "seat": "42 cm", "volume": "1.6875 m³", "packages": "1 bulto", "materials": "Madera maciza y acabados finos", "price": "$ Consultar", "cost": "$ Consultar", "photo": "02_FOTOS_LIMPIAS_PRODUCTOS/ATX_S_fa_Santa_fe.jpg"}, {"id": "CRT-019", "name": "SALA ARIA OSI FLAX", "category": "SALAS & SOFÁS", "collection": "CVV", "width": "290 cm", "depth": "188 cm", "height": "65 cm", "seat": "50 cm", "volume": "3.98545 m³", "packages": "2 bultos", "materials": "Textil Osi Flax", "price": "$ Consultar", "cost": "$ Consultar", "photo": "02_FOTOS_LIMPIAS_PRODUCTOS/CVV_Sala_Aria_Osi_Flax.jpg"}, {"id": "CRT-020", "name": "SALA ARIA OSI IVORY", "category": "SALAS & SOFÁS", "collection": "CVV", "width": "290 cm", "depth": "188 cm", "height": "65 cm", "seat": "50 cm", "volume": "3.98545 m³", "packages": "2 bultos", "materials": "Textil Osi Ivory", "price": "$ Consultar", "cost": "$ Consultar", "photo": "02_FOTOS_LIMPIAS_PRODUCTOS/CVV_Sala_Aria_Osi_Ivory.jpg"}, {"id": "CRT-021", "name": "SALA LEXY PRISMA OLIVO", "category": "SALAS & SOFÁS", "collection": "CVV", "width": "279 cm", "depth": "140 cm", "height": "63 cm", "seat": "42 cm", "volume": "N/D", "packages": "2 bultos", "materials": "Textil Prisma Olivo", "price": "$ Consultar", "cost": "$ Consultar", "photo": "02_FOTOS_LIMPIAS_PRODUCTOS/CVV_Sala_Lexy_Prisma_Olivo.jpg"}, {"id": "CRT-022", "name": "SALA LUMNO BAKER LIMEN", "category": "SALAS & SOFÁS", "collection": "CVV", "width": "392 cm", "depth": "110 cm", "height": "70 cm", "seat": "45 cm", "volume": "N/D", "packages": "4 bultos", "materials": "Madera maciza y acabados finos", "price": "$ Consultar", "cost": "$ Consultar", "photo": "02_FOTOS_LIMPIAS_PRODUCTOS/CVV_Sala_Lumno_Baker_Limen.jpg"}, {"id": "CRT-023", "name": "SALA LUMNO BAKER MUSHROOM", "category": "SALAS & SOFÁS", "collection": "CVV", "width": "392 cm", "depth": "110 cm", "height": "70 cm", "seat": "45 cm", "volume": "N/D", "packages": "4 bultos", "materials": "Madera maciza y acabados finos", "price": "$ Consultar", "cost": "$ Consultar", "photo": "02_FOTOS_LIMPIAS_PRODUCTOS/CVV_Sala_Lumno_Baker_Mushroom.jpg"}, {"id": "CRT-024", "name": "SALA PIERO FOREVER BUTTERMILK", "category": "SALAS & SOFÁS", "collection": "CVV", "width": "290 cm", "depth": "188 cm", "height": "65 cm", "seat": "50 cm", "volume": "3.98545 m³", "packages": "2 bultos", "materials": "Textil suave Forever Buttermilk", "price": "$ Consultar", "cost": "$ Consultar", "photo": "02_FOTOS_LIMPIAS_PRODUCTOS/CVV_Sala_Piero_Forever_Buttermilk.jpg"}, {"id": "CRT-025", "name": "SALA PIERO FOREVER CURRY", "category": "SALAS & SOFÁS", "collection": "CVV", "width": "290 cm", "depth": "188 cm", "height": "65 cm", "seat": "50 cm", "volume": "3.98545 m³", "packages": "2 bultos", "materials": "Textil texturizado Forever Curry", "price": "$ Consultar", "cost": "$ Consultar", "photo": "02_FOTOS_LIMPIAS_PRODUCTOS/CVV_Sala_Piero_Forever_Curry.jpg"}, {"id": "CRT-026", "name": "BASE DE CAMA YUTE NUE", "category": "RECÁMARAS & BURÓS", "collection": "MBI", "width": "206 cm", "depth": "195 cm", "height": "35 cm", "seat": "N/D", "volume": "1.688 m³", "packages": "2 bulto", "materials": "Estructura con detalle en tejido de Yute natural", "price": "$ Consultar", "cost": "$ Consultar", "photo": "02_FOTOS_LIMPIAS_PRODUCTOS/MBI_Base_de_cama_Yute_Nue.jpg"}, {"id": "CRT-027", "name": "BUFETERA BARPE NUEZ", "category": "BUFETEAS & CREDENZAS", "collection": "MBI", "width": "220 cm", "depth": "40 cm", "height": "80 cm", "seat": "N/D", "volume": "0.81 m³", "packages": "1 bulto", "materials": "Madera de Nogal / Chapa Nuez Natural", "price": "$ Consultar", "cost": "$ Consultar", "photo": "02_FOTOS_LIMPIAS_PRODUCTOS/MBI_Bufetera_Barpe_Nuez.jpg"}, {"id": "CRT-028", "name": "BUFETERA BEJUCO NUEZ", "category": "BUFETEAS & CREDENZAS", "collection": "MBI", "width": "220 cm", "depth": "40 cm", "height": "80 cm", "seat": "N/D", "volume": "0.860 m³", "packages": "1 bulto", "materials": "Madera de Nogal / Chapa Nuez Natural", "price": "$ Consultar", "cost": "$ Consultar", "photo": "02_FOTOS_LIMPIAS_PRODUCTOS/MBI_Bufetera_Bejuco_Nuez.jpg"}, {"id": "CRT-029", "name": "BUFETERA MADRID NUEZ", "category": "BUFETEAS & CREDENZAS", "collection": "MBI", "width": "180 cm", "depth": "40 cm", "height": "80 cm", "seat": "N/D", "volume": "0.81 m³", "packages": "1 bulto", "materials": "Madera de Nogal / Chapa Nuez Natural", "price": "$ Consultar", "cost": "$ Consultar", "photo": "02_FOTOS_LIMPIAS_PRODUCTOS/MBI_Bufetera_Madrid_Nuez.jpg"}, {"id": "CRT-030", "name": "BUFETERA PLATOS NUEZ", "category": "BUFETEAS & CREDENZAS", "collection": "MBI", "width": "240 cm", "depth": "40 cm", "height": "80 cm", "seat": "N/D", "volume": "0.219 m³", "packages": "1 bulto", "materials": "Madera de Nogal / Chapa Nuez Natural", "price": "$ Consultar", "cost": "$ Consultar", "photo": "02_FOTOS_LIMPIAS_PRODUCTOS/MBI_Bufetera_Platos_Nuez.jpg"}, {"id": "CRT-031", "name": "CABECERA MADRID KS NUEZ", "category": "RECÁMARAS & BURÓS", "collection": "MBI", "width": "246 cm", "depth": "40 cm", "height": "140 cm", "seat": "N/D", "volume": "1.637 m³", "packages": "1 bulto", "materials": "Madera de Nogal / Chapa Nuez Natural", "price": "$ Consultar", "cost": "$ Consultar", "photo": "02_FOTOS_LIMPIAS_PRODUCTOS/MBI_Cabecera_Madrid_KS_Nuez.jpg"}, {"id": "CRT-032", "name": "CENTRO DE TV PUERTAS CORREDIZAS NUEZ", "category": "COMPLEMENTOS & TV", "collection": "MBI", "width": "330 cm", "depth": "40 cm", "height": "240 cm", "seat": "N/D", "volume": "3.748 m³", "packages": "1 bulto", "materials": "Madera de Nogal / Chapa Nuez Natural", "price": "$ Consultar", "cost": "$ Consultar", "photo": "02_FOTOS_LIMPIAS_PRODUCTOS/MBI_Centro_de_tv_Puertas_corredizas_Nuez.jpg"}, {"id": "CRT-033", "name": "CREDENZA BEJUCO", "category": "BUFETEAS & CREDENZAS", "collection": "MBI", "width": "220 cm", "depth": "40 cm", "height": "80 cm", "seat": "N/D", "volume": "0.81 m³", "packages": "1 bultos", "materials": "Madera y tejido artesanal de Bejuco", "price": "$ Consultar", "cost": "$ Consultar", "photo": "02_FOTOS_LIMPIAS_PRODUCTOS/MBI_Credenza_Bejuco.jpg"}, {"id": "CRT-034", "name": "ESPEJO ESCALONADO DE PIE NUEZ", "category": "COMPLEMENTOS & TV", "collection": "MBI", "width": "240 cm", "depth": "N/D", "height": "120 cm", "seat": "N/D", "volume": "0.848 m³", "packages": "1 bulto", "materials": "Madera de Nogal / Chapa Nuez Natural", "price": "$ Consultar", "cost": "$ Consultar", "photo": "02_FOTOS_LIMPIAS_PRODUCTOS/MBI_Espejo_Escalonado_de_pie_Nuez.jpg"}, {"id": "CRT-035", "name": "ESPEJO NADIA NUEZ", "category": "COMPLEMENTOS & TV", "collection": "MBI", "width": "260 cm", "depth": "15 cm", "height": "120 cm", "seat": "N/D", "volume": "0.928 m³", "packages": "1 bulto", "materials": "Madera de Nogal / Chapa Nuez Natural", "price": "$ Consultar", "cost": "$ Consultar", "photo": "02_FOTOS_LIMPIAS_PRODUCTOS/MBI_Espejo_Nadia_Nuez.jpg"}, {"id": "CRT-036", "name": "MESA DE CENTRO BEJUCO NUEZ", "category": "MESAS DE CENTRO & LATERALES", "collection": "MBI", "width": "125 cm", "depth": "60 cm", "height": "42 cm", "seat": "N/D", "volume": "0.3971 m³", "packages": "1 bulto", "materials": "Madera de Nogal / Chapa Nuez Natural", "price": "$ Consultar", "cost": "$ Consultar", "photo": "02_FOTOS_LIMPIAS_PRODUCTOS/MBI_Mesa_de_centro_Bejuco_Nuez.jpg"}, {"id": "CRT-037", "name": "MESA DE COMEDOR BARRIL 8P NUEZ", "category": "COMEDORES & SILLERÍA", "collection": "MBI", "width": "180 cm", "depth": "120 cm", "height": "78 cm", "seat": "N/D", "volume": "0.41 m³", "packages": "2 bultos", "materials": "Madera de Nogal / Chapa Nuez Natural", "price": "$ Consultar", "cost": "$ Consultar", "photo": "02_FOTOS_LIMPIAS_PRODUCTOS/MBI_Mesa_de_comedor_Barril_8p_Nuez.jpg"}, {"id": "CRT-038", "name": "MESA DE COMEDOR KAMKO NUEZ", "category": "COMEDORES & SILLERÍA", "collection": "MBI", "width": "240 cm", "depth": "120 cm", "height": "78 cm", "seat": "N/D", "volume": "0.48 m³", "packages": "2 bultos", "materials": "Madera de Nogal / Chapa Nuez Natural", "price": "$ Consultar", "cost": "$ Consultar", "photo": "02_FOTOS_LIMPIAS_PRODUCTOS/MBI_Mesa_de_comedor_Kamko_Nuez.jpg"}, {"id": "CRT-039", "name": "MESA LATERAL PATONAS SET 3 NUEZ", "category": "MESAS DE CENTRO & LATERALES", "collection": "MBI", "width": "N/D", "depth": "N/D", "height": "60 cm", "seat": "N/D", "volume": "0.39 m³", "packages": "3 bulto", "materials": "Madera de Nogal / Chapa Nuez Natural", "price": "$ Consultar", "cost": "$ Consultar", "photo": "02_FOTOS_LIMPIAS_PRODUCTOS/MBI_Mesa_lateral_Patonas_set_3_Nuez.jpg"}, {"id": "CRT-040", "name": "DE BURÓ AFRICA NUEZ", "category": "RECÁMARAS & BURÓS", "collection": "MBI", "width": "50 cm", "depth": "40 cm", "height": "60 cm", "seat": "N/D", "volume": "0.210 m³", "packages": "1 bulto", "materials": "Madera de Nogal / Chapa Nuez Natural", "price": "$ Consultar", "cost": "$ Consultar", "photo": "02_FOTOS_LIMPIAS_PRODUCTOS/MBI_de_Bur__Africa_Nuez.jpg"}, {"id": "CRT-041", "name": "DE BURÓ BARPE NUEZ", "category": "RECÁMARAS & BURÓS", "collection": "MBI", "width": "70 cm", "depth": "40 cm", "height": "60 cm", "seat": "N/D", "volume": "0.219 m³", "packages": "1 bulto", "materials": "Madera de Nogal / Chapa Nuez Natural", "price": "$ Consultar", "cost": "$ Consultar", "photo": "02_FOTOS_LIMPIAS_PRODUCTOS/MBI_de_Bur__Barpe_Nuez.jpg"}, {"id": "CRT-042", "name": "DE BURÓ BEJUCO NUEZ", "category": "RECÁMARAS & BURÓS", "collection": "MBI", "width": "70 cm", "depth": "40 cm", "height": "60 cm", "seat": "N/D", "volume": "0.219 m³", "packages": "1 bulto", "materials": "Madera de Nogal / Chapa Nuez Natural", "price": "$ Consultar", "cost": "$ Consultar", "photo": "02_FOTOS_LIMPIAS_PRODUCTOS/MBI_de_Bur__Bejuco_Nuez.jpg"}, {"id": "CRT-043", "name": "DE BURÓ MADRID NUEZ", "category": "RECÁMARAS & BURÓS", "collection": "MBI", "width": "50 cm", "depth": "40 cm", "height": "60 cm", "seat": "N/D", "volume": "0.160 m³", "packages": "1 bulto", "materials": "Madera de Nogal / Chapa Nuez Natural", "price": "$ Consultar", "cost": "$ Consultar", "photo": "02_FOTOS_LIMPIAS_PRODUCTOS/MBI_de_Bur__Madrid_Nuez.jpg"}, {"id": "CRT-044", "name": "DE BURÓ PLATOS NUEZ", "category": "RECÁMARAS & BURÓS", "collection": "MBI", "width": "70 cm", "depth": "40 cm", "height": "60 cm", "seat": "N/D", "volume": "0.21 m³", "packages": "1 bulto", "materials": "Madera de Nogal / Chapa Nuez Natural", "price": "$ Consultar", "cost": "$ Consultar", "photo": "02_FOTOS_LIMPIAS_PRODUCTOS/MBI_de_Bur__Platos_Nuez.jpg"}, {"id": "CRT-045", "name": "DE BURÓ YUTE NUEZ", "category": "RECÁMARAS & BURÓS", "collection": "MBI", "width": "70 cm", "depth": "40 cm", "height": "60 cm", "seat": "N/D", "volume": "0.219 m³", "packages": "1 bulto", "materials": "Madera de Nogal / Chapa Nuez Natural", "price": "$ Consultar", "cost": "$ Consultar", "photo": "02_FOTOS_LIMPIAS_PRODUCTOS/MBI_de_Bur__Yute_Nuez.jpg"}, {"id": "CRT-046", "name": "SALA ZAMA", "category": "SALAS & SOFÁS", "collection": "YOI", "width": "225 cm", "depth": "90 cm", "height": "92 cm", "seat": "N/D", "volume": "2.119 m³", "packages": "1 bultos", "materials": "Madera maciza y acabados finos", "price": "$ Consultar", "cost": "$ Consultar", "photo": "02_FOTOS_LIMPIAS_PRODUCTOS/YOI_Sala_Zama.jpg"}, {"id": "CRT-047", "name": "SILLÓN OCASIONAL AARMIN", "category": "SILLONES OCASIONALES", "collection": "YOI", "width": "77 cm", "depth": "87 cm", "height": "90 cm", "seat": "N/D", "volume": "0.648 m³", "packages": "1 bulto", "materials": "Madera maciza y acabados finos", "price": "$ Consultar", "cost": "$ Consultar", "photo": "02_FOTOS_LIMPIAS_PRODUCTOS/YOI_Sill_n_ocasional_Aarmin.jpg"}, {"id": "CRT-048", "name": "SILLÓN OCASIONAL AUREN", "category": "SILLONES OCASIONALES", "collection": "YOI", "width": "86 cm", "depth": "90 cm", "height": "87 cm", "seat": "N/D", "volume": "0.795 m³", "packages": "1 bulto", "materials": "Madera maciza y acabados finos", "price": "$ Consultar", "cost": "$ Consultar", "photo": "02_FOTOS_LIMPIAS_PRODUCTOS/YOI_Sill_n_ocasional_Auren.jpg"}, {"id": "CRT-049", "name": "SILLÓN OCASIONAL DUE LONGUE", "category": "SILLONES OCASIONALES", "collection": "YOI", "width": "85 cm", "depth": "85 cm", "height": "75 cm", "seat": "N/D", "volume": "0.648 m³", "packages": "1 bulto", "materials": "Madera maciza y acabados finos", "price": "$ Consultar", "cost": "$ Consultar", "photo": "02_FOTOS_LIMPIAS_PRODUCTOS/YOI_Sill_n_ocasional_Due_Longue.jpg"}, {"id": "CRT-050", "name": "SILLÓN OCASIONAL ZUR PIEL", "category": "SILLONES OCASIONALES", "collection": "YOI", "width": "69 cm", "depth": "86 cm", "height": "82 cm", "seat": "N/D", "volume": "0.586 m³", "packages": "1 bulto", "materials": "Tapicería en Piel Genuina de alta gama", "price": "$ Consultar", "cost": "$ Consultar", "photo": "02_FOTOS_LIMPIAS_PRODUCTOS/YOI_Sill_n_ocasional_Zur_Piel.jpg"}, {"id": "CRT-051", "name": "SILLÓN OCASIONAL ZUR PIEL SAND 07", "category": "SILLONES OCASIONALES", "collection": "YOI", "width": "69 cm", "depth": "86 cm", "height": "82 cm", "seat": "N/D", "volume": "0.586 m³", "packages": "1 bulto", "materials": "Tapicería en Piel Genuina de alta gama", "price": "$ Consultar", "cost": "$ Consultar", "photo": "02_FOTOS_LIMPIAS_PRODUCTOS/YOI_Sill_n_ocasional_Zur_Piel_Sand_07.jpg"}];
         let filteredProducts = [...products];
         let currentIndex = 0;
-        let currentSheet = 1;
 
         function renderGrid(items) {
             const grid = document.getElementById('productsGrid');
@@ -748,23 +508,11 @@
                 card.innerHTML = `
                     <div class="img-wrap">
                         <span class="badge-cat">${p.collection}</span>
-                        <span class="badge-prov">${p.provider}</span>
-                        <img src="02_FOTOS_LIMPIAS_PRODUCTOS/${p.photo_frontal}" alt="${p.name}" onerror="this.src='https://via.placeholder.com/400x300?text=CREATA+Muebles'">
+                        <img src="${p.photo}" alt="${p.name}" onerror="this.src='https://via.placeholder.com/400x300?text=CREATA+Muebles'">
                     </div>
                     <div class="card-body">
                         <div class="card-title">${p.name}</div>
                         <div class="card-col">${p.category} · REF: ${p.id}</div>
-
-                        <div class="price-row">
-                            <div class="price-item">
-                                <span>Precio</span>
-                                <strong>${p.price}</strong>
-                            </div>
-                            <div class="price-item" style="text-align: right;">
-                                <span>Costo</span>
-                                <strong style="color: var(--accent-gold);">${p.cost}</strong>
-                            </div>
-                        </div>
                         
                         <div class="dims-table">
                             <div class="dim-item">
@@ -794,6 +542,7 @@
             document.querySelectorAll('.cat-btn').forEach(btn => {
                 btn.classList.toggle('active', btn.innerText.includes(cat) || (cat === 'TODOS' && btn.innerText.includes('TODOS')));
             });
+            
             document.getElementById('activeCategoryTitle').innerText = cat === 'TODOS' ? 'Todos los Muebles' : cat;
 
             if (cat === 'TODOS') {
@@ -810,63 +559,30 @@
                 p.name.toLowerCase().includes(term) ||
                 p.materials.toLowerCase().includes(term) ||
                 p.category.toLowerCase().includes(term) ||
-                p.provider.toLowerCase().includes(term) ||
                 p.collection.toLowerCase().includes(term)
             );
             renderGrid(filteredProducts);
         });
-
-        function switchSheet(sheetNum) {
-            currentSheet = sheetNum;
-            document.getElementById('btnTab1').classList.toggle('active', sheetNum === 1);
-            document.getElementById('btnTab2').classList.toggle('active', sheetNum === 2);
-            document.getElementById('sheet1View').style.display = sheetNum === 1 ? 'grid' : 'none';
-            document.getElementById('sheet2View').style.display = sheetNum === 2 ? 'flex' : 'none';
-        }
 
         function openModal(index) {
             currentIndex = index;
             const p = filteredProducts[currentIndex];
             if (!p) return;
 
-            // Sheet 1 Data
-            document.getElementById('m1FrontImg').src = '02_FOTOS_LIMPIAS_PRODUCTOS/' + p.photo_frontal;
-            document.getElementById('m1CatTag').innerText = `${p.category} · PROVEEDOR: ${p.provider}`;
-            document.getElementById('m1Title').innerText = p.name;
-            document.getElementById('m1Width').innerText = p.width;
-            document.getElementById('m1Depth').innerText = p.depth;
-            document.getElementById('m1Height').innerText = p.height;
-            document.getElementById('m1Seat').innerText = p.seat;
-            document.getElementById('m1Packages').innerText = p.packages;
-            document.getElementById('m1Volume').innerText = p.volume;
-            document.getElementById('m1Price').innerText = p.price;
-            document.getElementById('m1Cost').innerText = p.cost;
-            document.getElementById('m1Materials').innerText = p.materials;
-
-            // Swatch
-            const swatchRow = document.getElementById('m1SwatchesRow');
-            if (p.photo_swatch) {
-                document.getElementById('m1SwatchImg').src = '02_FOTOS_LIMPIAS_PRODUCTOS/' + p.photo_swatch;
-                swatchRow.style.display = 'flex';
-            } else {
-                swatchRow.style.display = 'none';
-            }
-
-            // Special notes
-            const specialBox = document.getElementById('m1Special');
-            if (p.special) {
-                specialBox.innerText = '★ ' + p.special;
-                specialBox.style.display = 'block';
-            } else {
-                specialBox.style.display = 'none';
-            }
-
-            // Sheet 2 Data
-            document.getElementById('m2AmbImg').src = '02_FOTOS_LIMPIAS_PRODUCTOS/' + p.photo_ambiente;
-            document.getElementById('m2Title').innerText = p.name;
-
+            document.getElementById('modalImg').src = p.photo;
+            document.getElementById('modalCat').innerText = `${p.category} · LÍNEA ${p.collection}`;
+            document.getElementById('modalTitle').innerText = p.name;
+            document.getElementById('modalWidth').innerText = p.width;
+            document.getElementById('modalDepth').innerText = p.depth;
+            document.getElementById('modalHeight').innerText = p.height;
+            document.getElementById('modalSeat').innerText = p.seat;
+            document.getElementById('modalPackages').innerText = p.packages;
+            document.getElementById('modalVolume').innerText = p.volume;
+            document.getElementById('modalMaterials').innerText = p.materials;
+            document.getElementById('modalPrice').innerText = p.price || '$ Consultar';
+            document.getElementById('modalCost').innerText = p.cost || '$ Consultar';
             document.getElementById('modalCounter').innerText = `${currentIndex + 1} de ${filteredProducts.length}`;
-            switchSheet(1); // default to Sheet 1
+
             document.getElementById('slideModal').classList.add('active');
         }
 
@@ -897,10 +613,6 @@
                 } else if (e.key === 'ArrowLeft') {
                     e.preventDefault();
                     prevSlide();
-                } else if (e.key === '1') {
-                    switchSheet(1);
-                } else if (e.key === '2') {
-                    switchSheet(2);
                 } else if (e.key === 'Escape') {
                     closeModal();
                 }
